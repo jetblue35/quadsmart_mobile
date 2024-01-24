@@ -1,0 +1,4 @@
+{
+    "base_url": "https://rentalmanagementapi-production.up.railway.app/v1/",
+    "distanceLimit": 100
+}
