@@ -135,48 +135,13 @@ export default function EmailForm({setToken, navigation, setIsLoggedIn}) {
             />
 
             
-            <View style={styles.termsContainer}>
-                <CheckBox
-                    style={styles.checkbox}
-                    disabled={false}
-                    value={accept}
-                    color={'cornflowerblue'}
-                    onValueChange={() => {
-                        setAccepts((accept ? false : true));
-                    }}
-                >
-
-                </CheckBox>
-                
-                <View style={styles.termsTextContainer}>
-                    <Text style={styles.termsText}>By registering, you agree to our </Text> 
-                    <Pressable onPress={() => {
-                        setModalVisible(!modalVisible);
-                        setTermsVisible(true);
-                    }}>
-                        <Text style={[styles.termsText, {color: 'blue'}]}>terms and conditions </Text> 
-                    </Pressable>
-                    <Text style={styles.termsText}>and </Text> 
-
-                    <Pressable onPress={() => {
-                        setModalVisible(!modalVisible);
-                        setTermsVisible(false);
-                    }}>
-                        <Text style={[styles.termsText, {color: 'blue'}]}>privacy policy.</Text>
-                    </Pressable>
-                </View>
-                
-            </View>
             
-            {accept ? 
+            
+            
                 <Pressable style={styles.emailRegister} onPress={createUser}>
                 <Text>Register</Text>
                 </Pressable>
-            :
-                <Pressable style={styles.emailRegisterGray} onPress={checkAlert}>
-                <Text style={styles.greyedOut}>Register</Text>
-                </Pressable>
-            }
+            
         <TermsModal navigation={navigation} modalVisible={modalVisible} setModalVisible={setModalVisible} termsVisible={termsVisible}/>
         <FlashMessage position={'top'}/>
         </View>
