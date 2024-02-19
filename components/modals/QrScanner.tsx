@@ -20,6 +20,7 @@ export default function QrScanner({navigation, cameraVisible, setCameraVisible, 
     }, []);
 
     async function handleBarCodeScanned({ type, data }) {
+      console.log(data);
       setScanned(true);
 
       await startScooter(data);
@@ -35,6 +36,7 @@ export default function QrScanner({navigation, cameraVisible, setCameraVisible, 
     async function startScooter(scooter): Promise<void> {
       // Check if QR code is a valid scooter
       const result = await scooterModel.checkIfValidScooter(scooter, currentCity);
+      
 
       
       if (result) {

@@ -135,13 +135,16 @@ export default function EmailForm({setToken, navigation, setIsLoggedIn}) {
             />
 
             
-            
-            
+        
             
                 <Pressable style={styles.emailRegister} onPress={createUser}>
                 <Text>Register</Text>
                 </Pressable>
-            
+            :
+                <Pressable style={styles.emailRegisterGray} onPress={checkAlert}>
+                <Text style={styles.greyedOut}>Register</Text>
+                </Pressable>
+            }
         <TermsModal navigation={navigation} modalVisible={modalVisible} setModalVisible={setModalVisible} termsVisible={termsVisible}/>
         <FlashMessage position={'top'}/>
         </View>
