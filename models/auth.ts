@@ -33,7 +33,7 @@ const authModel = {
     },
 
     login: async function login(user: object): Promise<Object> {
-        user['api_key'] = "AIzaSyA8OZC5Yg2qaxu1B5loyXtNRjlgG8XinnU";
+        user['api_key'] = API_KEY;
                 
         const response = await fetch(`${config.base_url}auth/login/server/user`, {
             method: 'POST',
